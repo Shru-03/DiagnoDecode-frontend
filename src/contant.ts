@@ -1,1 +1,1 @@
-export const BASE_URL:string="http://localhost:5000"
+export const BASE_URL:string="https://diagnodecode-backend.onrender.com"
