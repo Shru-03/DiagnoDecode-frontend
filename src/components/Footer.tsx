@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {  FaGlobe, FaLinkedin } from "react-icons/fa";
+import { FaGlobe, FaLinkedin } from "react-icons/fa";
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
     >
       <img src="/logo2.png" alt="Logo" className="h-10" />
 
-      <p className="text-[18px] text-gray-500 mt-2">
+      <p className="text-[15px] sm:text-[18px] text-gray-500 mt-2">
         © {currentYear} Shruti Sharma. All rights reserved.
       </p>
 
