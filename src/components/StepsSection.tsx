@@ -32,13 +32,13 @@ const StepsSection: React.FC = () => (
       {steps.map((step, idx) => (
         <motion.li
           key={idx}
-          className="flex items-start gap-3"
+          className="flex items-start gap-0 sm:gap-3 "
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4, delay: idx * 0.2 }}
         >
           <span className="text-xl">{step.icon}</span>
-          <span>{step.text}</span>
+          <span className="text-sm sm:text-l">{step.text}</span>
         </motion.li>
       ))}
     </motion.ol>

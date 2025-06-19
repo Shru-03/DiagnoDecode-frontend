@@ -10,6 +10,7 @@ import StepsSection from "./StepsSection";
 import UploadSection from "./UploadSection";
 import SummarySection from "./SummarySection";
 import { BASE_URL } from "../contant";
+import Footer from "./Footer";
 
 const FileUploader: React.FC = () => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -70,33 +71,36 @@ const FileUploader: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-pink-200 via-blue-200 to-pink-100 p-10">
-      <Header />
+    <div className="min-h-screen bg-gradient-to-r from-pink-200 via-blue-200 to-pink-100 ">
+      <div className="px-4 py-6 md:px-6">
+        <Header />
 
-      <div className="flex flex-col md:flex-row gap-10">
-        {/* Left Manual Section */}
-        <StepsSection />
+        <div className="flex flex-col-reverse md:flex-row gap-10">
+          {/* Left Manual Section */}
+          <StepsSection />
 
-        {/* Right Upload Section */}
+          {/* Right Upload Section */}
 
-        <UploadSection
-          selectedFile={selectedFile}
-          onFileChange={handleFileChange}
-          language={language}
-          onLanguageChange={setLanguage}
-          onUpload={handleUpload}
-          loadingStep={loadingStep}
-        />
+          <UploadSection
+            selectedFile={selectedFile}
+            onFileChange={handleFileChange}
+            language={language}
+            onLanguageChange={setLanguage}
+            onUpload={handleUpload}
+            loadingStep={loadingStep}
+          />
+        </div>
+
+        {loadingStep === "done" && simplifiedText && (
+          <SummarySection
+            simplifiedText={simplifiedText}
+            isSpeaking={isSpeaking}
+            setIsSpeaking={setIsSpeaking}
+            language={language}
+          />
+        )}
       </div>
-
-      {loadingStep === "done" && simplifiedText && (
-        <SummarySection
-          simplifiedText={simplifiedText}
-          isSpeaking={isSpeaking}
-          setIsSpeaking={setIsSpeaking}
-          language={language}
-        />
-      )}
+      <Footer />
     </div>
   );
 };
