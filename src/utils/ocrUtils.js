@@ -3,7 +3,7 @@ import Tesseract from "tesseract.js";
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.js";
 
-export const extractTextFromPDF = async (file: File): Promise<string> => {
+export const extractTextFromPDF = async (file) => {
   const arrayBuffer = await file.arrayBuffer();
   const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
   let text = "";
@@ -13,7 +13,7 @@ export const extractTextFromPDF = async (file: File): Promise<string> => {
     const viewport = page.getViewport({ scale: 2 });
 
     const canvas = document.createElement("canvas");
-    const context = canvas.getContext("2d")!;
+    const context = canvas.getContext("2d");
     canvas.width = viewport.width;
     canvas.height = viewport.height;
 
@@ -27,7 +27,7 @@ export const extractTextFromPDF = async (file: File): Promise<string> => {
   return text;
 };
 
-export const extractTextFromImage = async (file: File): Promise<string> => {
+export const extractTextFromImage = async (file) => {
   const result = await Tesseract.recognize(file, "eng");
   return result.data.text;
 };

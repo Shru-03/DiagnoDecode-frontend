@@ -12,7 +12,7 @@ const steps = [
   },
 ];
 
-const StepsSection: React.FC = () => (
+const StepsSection = () => (
   <div className="bg-white shadow-xl rounded-xl p-6 w-full md:w-1/2">
     <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
       <span className="text-blue-500">🩺</span> How it Works
@@ -32,7 +32,7 @@ const StepsSection: React.FC = () => (
       {steps.map((step, idx) => (
         <motion.li
           key={idx}
-          className="flex items-start gap-0 sm:gap-3 "
+          className="flex items-start gap-0 sm:gap-3"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4, delay: idx * 0.2 }}

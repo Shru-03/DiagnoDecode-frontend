@@ -2,16 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { GridLoader, ClipLoader } from "react-spinners";
 
-interface UploadSectionProps {
-  selectedFile: File | null;
-  onFileChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  language: string;
-  onLanguageChange: (value: string) => void;
-  onUpload: () => void;
-  loadingStep: string;
-}
-
-const UploadSection: React.FC<UploadSectionProps> = ({
+const UploadSection = ({
   selectedFile,
   onFileChange,
   language,

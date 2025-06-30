@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
-import * as pdfjsLib from "pdfjs-dist/legacy/build/pdf";
+
 import "../index.css";
-pdfjsLib.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.js";
+import * as pdfjsLib from "pdfjs-dist/legacy/build/pdf";
+import pdfjsWorker from "pdfjs-dist/legacy/build/pdf.worker?url";
+pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 import { extractTextFromPDF, extractTextFromImage } from "../utils/ocrUtils";
 import Swal from "sweetalert2";
 import Header from "./Header";
@@ -12,17 +14,15 @@ import SummarySection from "./SummarySection";
 import { BASE_URL } from "../contant";
 import Footer from "./Footer";
 
-const FileUploader: React.FC = () => {
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
-  const [language, setLanguage] = useState<string>("English");
+const FileUploader = () => {
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [language, setLanguage] = useState("English");
   const [isSpeaking, setIsSpeaking] = useState(false);
-  const [simplifiedText, setSimplifiedText] = useState<string>("");
+  const [simplifiedText, setSimplifiedText] = useState("");
 
-  const [loadingStep, setLoadingStep] = useState<
-    "none" | "extracting" | "analyzing" | "done" | "error"
-  >("none");
+  const [loadingStep, setLoadingStep] = useState("none");
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileChange = (e) => {
     if (e.target.files?.[0]) {
       setSelectedFile(e.target.files[0]);
     }
@@ -35,7 +35,6 @@ const FileUploader: React.FC = () => {
         title: "No File Selected!",
         text: "Please select a file first.",
       });
-
       return;
     }
 
@@ -71,7 +70,7 @@ const FileUploader: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-pink-200 via-blue-200 to-pink-100 ">
+    <div className="">
       <div className="px-4 py-6 md:px-6">
         <Header />
 
@@ -80,7 +79,6 @@ const FileUploader: React.FC = () => {
           <StepsSection />
 
           {/* Right Upload Section */}
-
           <UploadSection
             selectedFile={selectedFile}
             onFileChange={handleFileChange}

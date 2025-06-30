@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaGlobe, FaLinkedin } from "react-icons/fa";
 
-const Footer: React.FC = () => {
+const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="bg-white shadow-2xl px-3 sm:px-10 py-4 flex items-center justify-between flex-wrap"
+      className="bg-white h-22 shadow-2xl px-3 sm:px-10 py-4 flex items-center justify-between flex-wrap"
     >
       <img src="/logo2.png" alt="Logo" className="h-10" />
 

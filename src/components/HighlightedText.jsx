@@ -8,7 +8,7 @@ const keywords = [
   { label: "Tests", emoji: "🧪", color: "bg-blue-200" },
 ];
 
-const HighlightedText = ({ text }: { text: string }) => {
+const HighlightedText = ({ text }) => {
   const [displayed, setDisplayed] = useState("");
 
   useEffect(() => {
