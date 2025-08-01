@@ -1,12 +1,60 @@
-# React + Vite
+#🧠 Digno Decode – Medical Report Simplifier
+Version 1.0 – Simplify medical reports with AI.
+Built with React.js, Framer Motion, Tailwind CSS, and powered by Gemini AI.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🩺 Project Overview
+Digno Decode is a patient-first web application that leverages generative AI to decode complex medical reports into simple, human-readable summaries.
 
-Currently, two official plugins are available:
+🔍 Users can:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Upload medical reports (PDF)
+Choose their preferred language: Hindi or English
+Listen to the simplified report (Text-to-Speech)
+Download the explanation for future reference
 
-## Expanding the ESLint configuration
+This is Version 1. A major Version 2 is already in the pipeline with more intelligent features and enhanced UX.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+⚙️ Tech Stack
+
+| Layer     | Tech                                     |
+| --------- | ---------------------------------------- |
+| Frontend  | React.js, Tailwind CSS, Framer Motion    |
+| Backend   | Node.js, Express.js, MongoDB             |
+| AI Engine | Gemini AI (Google Generative AI)         |
+| TTS       | Text-to-Speech APIs (platform-dependent) |
+
+
+🖼️ Features – v1.0
+
+📤 Upload medical report in PDF format
+🧠 AI-powered simplification via Gemini
+🗣️ Text-to-Speech playback in Hindi/English
+📥 Downloadable explanation
+🧭 Smooth transitions via Framer Motion
+📱 Fully responsive design
+
+
+🚀 Getting Started
+
+# Clone the repo
+git clone https://github.com/Shru-03/DiagnoDecode-frontend.git
+cd DiagnoDecode-frontend
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+##🔐 Backend Access
+The backend is currently private.
+If you're a developer, researcher, or medical professional interested in accessing the API or exploring integration:
+
+📩 Reach out via email: [shrutisharma03113@gmail.com]
+💬 Or message me directly on LinkedIn: (https://www.linkedin.com/in/shruti-sharma-developer/)
+
+Live Demo:
+https://diagnodecode.netlify.app/
+
+<img width="1911" height="886" alt="image" src="https://github.com/user-attachments/assets/b3d7d3d0-f881-423d-8d67-1ce5f510ac2b" />
+
